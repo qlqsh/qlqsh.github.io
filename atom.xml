@@ -4,7 +4,7 @@
   <title><![CDATA[刘明个人博客]]></title>
   <link href="http://qlqsh.github.io/atom.xml" rel="self"/>
   <link href="http://qlqsh.github.io/"/>
-  <updated>2015-09-11T23:00:50+08:00</updated>
+  <updated>2015-09-11T23:03:06+08:00</updated>
   <id>http://qlqsh.github.io/</id>
   <author>
     <name><![CDATA[刘明]]></name>
@@ -107,7 +107,7 @@ disqus_show_comment_count: true
 <pre><code>default_asides: [asides/category_list.html]
 </code></pre>
 
-<p>注意，不支持中文。要想显示<code>{% category_list %}</code>，需要这样<code>&amp;#123;% raw %&amp;#125;{% category_list %}&amp;#123;% endraw %&amp;#125;</code>。</p>
+<p>注意，不支持中文。要想显示<code>{% category_list %}</code>，需要在<code>{% category_list %}</code>加入<code>raw</code>和<code>endraw</code>。</p>
 
 <h2>一些简单配置</h2>
 
