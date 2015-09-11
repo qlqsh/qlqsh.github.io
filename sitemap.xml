@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://qlqsh.github.io/blog/2015/09/11/shi-yong-cocoapodszuo-ioscheng-xu-bao-yi-lai-guan-li/</loc>
+    <lastmod>2015-09-11T22:28:03+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://qlqsh.github.io/blog/2013/05/23/octopressfu-jia-gong-neng/</loc>
+    <lastmod>2013-05-23T01:48:00+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://qlqsh.github.io/blog/2013/05/22/shi-yong-octopressjian-li-bo-ke/</loc>
     <lastmod>2013-05-22T13:38:00+08:00</lastmod>
   </url>
@@ -9,8 +17,5 @@
   </url>
   <url>
     <loc>http://qlqsh.github.io/</loc>
-  </url>
-  <url>
-    <loc>http://qlqsh.github.io/blog/categories/octopress/</loc>
   </url>
 </urlset>
