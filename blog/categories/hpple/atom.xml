@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hpple | 刘明个人博客]]></title>
+  <link href="http://qlqsh.github.io/blog/categories/hpple/atom.xml" rel="self"/>
+  <link href="http://qlqsh.github.io/"/>
+  <updated>2015-09-12T00:15:53+08:00</updated>
+  <id>http://qlqsh.github.io/</id>
+  <author>
+    <name><![CDATA[刘明]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hpple 使用]]></title>
+    <link href="http://qlqsh.github.io/blog/2015/09/11/hpple-shi-yong/"/>
+    <updated>2015-09-11T23:59:48+08:00</updated>
+    <id>http://qlqsh.github.io/blog/2015/09/11/hpple-shi-yong</id>
+    <content type="html"><![CDATA[<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">import</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">TFHpple</span><span class="p">.</span><span class="n">h</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="bp">NSData</span>  <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">data</span>      <span class="o">=</span> <span class="p">[</span><span class="bp">NSData</span> <span class="nl">dataWithContentsOfFile</span><span class="p">:@</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">index</span><span class="p">.</span><span class="n">html</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;];</span>
+</span><span class='line'><span class="n">TFHpple</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">doc</span>       <span class="o">=</span> <span class="p">[[</span><span class="n">TFHpple</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithHTMLData</span><span class="p">:</span><span class="n">data</span><span class="p">];</span>
+</span><span class='line'><span class="bp">NSArray</span> <span class="o">*</span><span class="n">elements</span>  <span class="o">=</span> <span class="p">[</span><span class="n">doc</span> <span class="nl">search</span><span class="p">:@</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="c1">//a[@class=&amp;lsquo;sponsor&amp;rsquo;]&amp;rdquo;];&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">TFHppleElement</span> <span class="o">*</span><span class="n">element</span> <span class="o">=</span> <span class="p">[</span><span class="n">elements</span> <span class="nl">objectAtIndex</span><span class="p">:</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="n">raw</span><span class="p">];</span>                        <span class="c1">// 未处理内容</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="n">text</span><span class="p">];</span>                       <span class="c1">// The text inside the HTML element (the content of the first text node)</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="n">tagName</span><span class="p">];</span>                    <span class="c1">// &amp;ldquo;a&amp;rdquo;</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="n">attributes</span><span class="p">];</span>                 <span class="c1">// NSDictionary of href, class, id, etc.</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="nl">objectForKey</span><span class="p">:@</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">href</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;];</span>       <span class="c1">// Easy access to single attribute</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="nl">firstChildWithTagName</span><span class="p">:@</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">b</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;];</span> <span class="c1">// The first &amp;ldquo;b&amp;rdquo; child node</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<!--more-->
+
+
+<h2>遇到的一些问题</h2>
+
+<h4>非UTF-8页面</h4>
+
+<p>1、编码转换。网页编码（比如：gb2312）转换为utf8编码。</p>
+
+<p>2、把其中的</p>
+
+<pre><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312"&gt;
+</code></pre>
+
+<p>替换为</p>
+
+<pre><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf8"&gt;
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

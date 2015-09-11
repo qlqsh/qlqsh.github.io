@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://qlqsh.github.io/blog/2015/09/12/git-bei-wang/</loc>
+    <lastmod>2015-09-12T00:08:13+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://qlqsh.github.io/blog/2015/09/11/hpple-shi-yong/</loc>
+    <lastmod>2015-09-11T23:59:48+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://qlqsh.github.io/blog/2015/09/11/iosbi-ji-(1):pushviewcontroller,-presentviewcontroller-jian-dan-qu-fen/</loc>
+    <lastmod>2015-09-11T23:51:51+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://qlqsh.github.io/blog/2015/09/11/textmate2-jian-dan-bi-ji/</loc>
+    <lastmod>2015-09-11T23:45:35+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://qlqsh.github.io/blog/2015/09/11/ios-di-san-fang-lei-ku/</loc>
+    <lastmod>2015-09-11T23:41:19+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://qlqsh.github.io/blog/2015/09/11/xcode-cha-jian/</loc>
+    <lastmod>2015-09-11T23:23:11+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://qlqsh.github.io/blog/2015/09/11/shi-yong-cocoapodszuo-ioscheng-xu-bao-yi-lai-guan-li/</loc>
     <lastmod>2015-09-11T22:28:03+08:00</lastmod>
   </url>
@@ -17,5 +41,11 @@
   </url>
   <url>
     <loc>http://qlqsh.github.io/</loc>
+  </url>
+  <url>
+    <loc>http://qlqsh.github.io/blog/categories/iosdi-san-fang-lei-ku/</loc>
+  </url>
+  <url>
+    <loc>http://qlqsh.github.io/blog/categories/hpple/</loc>
   </url>
 </urlset>

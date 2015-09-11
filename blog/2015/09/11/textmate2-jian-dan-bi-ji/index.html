@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>使用CocoaPods做iOS程序包依赖管理 - 刘明个人博客</title>
+  <title>TextMate2 简单笔记 - 刘明个人博客</title>
   <meta name="author" content="刘明">
 
   
-  <meta name="description" content="由于ruby、CocoaPods被墙的关系，可能会造成一些乱七八糟的错误。最好有个稳定的VPN。 CocoaPods安装和使用 安装 mac下安装很简单。 sudo gem install cocoapods 注意，需要安装Command Line Tools。 使用 &hellip;">
+  <meta name="description" content="Bundle目录 官方博客上说，TM2的Bundle目录是 ~/Library/Application Support/Avian/Pristine Copy/Bundles/ 令人困惑的是，以下目录也可用 ~/Library/Application Support/Avian/Bundles/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://qlqsh.github.io/blog/2015/09/11/shi-yong-cocoapodszuo-ioscheng-xu-bao-yi-lai-guan-li/">
+  <link rel="canonical" href="http://qlqsh.github.io/blog/2015/09/11/textmate2-jian-dan-bi-ji/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="刘明个人博客" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">使用CocoaPods做iOS程序包依赖管理</h1>
+      <h1 class="entry-title">TextMate2 简单笔记</h1>
     
     
       <p class="meta">
@@ -77,66 +77,63 @@
 
 
 
-<time class='entry-date' datetime='2015-09-11T22:28:03+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:28 pm</span></time>
+<time class='entry-date' datetime='2015-09-11T23:45:35+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:45 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>由于ruby、CocoaPods被墙的关系，可能会造成一些乱七八糟的错误。最好有个稳定的VPN。</p>
+<div class="entry-content"><h2>Bundle目录</h2>
 
-<!--more-->
+<p>官方博客上说，TM2的Bundle目录是</p>
 
+<blockquote><p>~/Library/Application Support/Avian/Pristine Copy/Bundles/</p></blockquote>
 
-<h2>CocoaPods安装和使用</h2>
+<p>令人困惑的是，以下目录也可用</p>
 
-<h4>安装</h4>
+<blockquote><p>~/Library/Application Support/Avian/Bundles/</p></blockquote>
 
-<p>mac下安装很简单。</p>
+<p>TextMate默认带的那些Bundles都放在以下目录中：</p>
 
-<pre><code>sudo gem install cocoapods
+<blockquote><p>~/Library/Application Support/TextMate/Managed/Bundles</p></blockquote>
+
+<p>额外的Bundle</p>
+
+<h2>全局设置文件</h2>
+
+<p>TM2可以自定一个全局设置，保存在<code>~/.tm_properties</code>文件中。</p>
+
+<p>可参考：<a href="https://gist.github.com/1478685">https://gist.github.com/1478685</a></p>
+
+<blockquote><p>奇怪，死活找不到.tm_properties文件，正式版出来再看看文档吧。</p></blockquote>
+
+<h2>TextMate2查找替换</h2>
+
+<p>基本不用调出对话框的。</p>
+
+<p><code>ctrl+s</code> 增量查找</p>
+
+<p><code>cmd+e</code> 将选中内容变成查找目标，<code>cmd+g</code>就到下一个了。常用的组合是<code>ctrl+w</code>（选中当前词） –> <code>cmd+e</code> –> <code>cmd+g</code></p>
+
+<p><code>cmd+opt+f</code> 同时编辑文件内所有匹配查找目标的内容</p>
+
+<p>另外全工程替换效果也很赞。可以进一步编辑工程下面的<code>.tm_properties</code>，设置工程内查找可以忽略哪些文件。例如忽略<code>vendor</code>目录，<code>.bundle</code>文件，<code>.sfd</code>文件和压缩的js可以这么写：</p>
+
+<pre><code>exclude = "{$exclude,vendor/**/*,*.bundle,*.sfd,*.sfd~,*.a,*.min.js}"
 </code></pre>
 
-<blockquote><p>注意，需要安装Command Line Tools。</p></blockquote>
+<p>键盘操作限定搜索范围在一个文件夹内的方法：<code>cmd+opt+tab</code>把焦点切换到目录中选中文件夹 （焦点在目录时可以连续敲入文件的前几个字母快速跳到那个文件上，就和在<code>finder</code>中差不多），然后就可以<code>cmd+shift+f</code>了。</p>
 
-<h4>使用</h4>
+<h2>TextMate2建立新Bundles</h2>
 
-<p>使用时需要新建一个名为Podfile的文件，以如下格式，将依赖的库名字依次列在文件中即可</p>
-
-<pre><code>platform :ios
-pod 'JSONKit',       '~&gt; 1.4'
-pod 'Reachability',  '~&gt; 3.0.0'
-pod 'ASIHTTPRequest'
-pod 'RegexKitLite'
-</code></pre>
-
-<p>然后将编辑好的Podfile文件放到你的项目根目录中，执行如下命令即可：</p>
-
-<pre><code>cd "your project home"
-pod install
-</code></pre>
-
-<p>现在，你的所有第三方库都已经下载完成并且设置好了编译参数和依赖，你只需要记住如下2点即可：</p>
-
-<blockquote><ol>
-<li>使用CocoaPods生成的<code>.xcworkspace</code>文件来打开工程，而不是以前的<code>.xcodeproj</code>文件。</li>
-<li>每次更改了Podfile文件，你需要重新执行一次<code>pod install</code>命令。</li>
-</ol>
-</blockquote>
-
-<h4>查找第三方库</h4>
-
-<p>可以使用<code>pod search name</code>命令查找可用类库。比如：</p>
-
-<pre><code>pod search json
-</code></pre>
+<p><code>Bundles</code> –> <code>Edit Bundles</code>，然后<code>cmd+N</code>。</p>
 
 <h2>参考文献：</h2>
 
-<p><a href="http://blog.devtang.com/blog/2012/12/02/use-cocoapod-to-manage-ios-lib-dependency/">http://blog.devtang.com/blog/2012/12/02/use-cocoapod-to-manage-ios-lib-dependency/</a></p>
+<p><a href="http://ruby-china.org/topics/5916">http://ruby-china.org/topics/5916</a></p>
 
-<p><a href="http://www.cnblogs.com/wayne23/p/3912882.html">http://www.cnblogs.com/wayne23/p/3912882.html</a></p>
+<p><a href="http://xiaolai.github.io/alpha/notes/TextMate2.html">http://xiaolai.github.io/alpha/notes/TextMate2.html</a></p>
 </div>
 
 
@@ -152,7 +149,7 @@ pod install
 
 
 
-<time class='entry-date' datetime='2015-09-11T22:28:03+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:28 pm</span></time>
+<time class='entry-date' datetime='2015-09-11T23:45:35+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:45 pm</span></time>
       
 
 
@@ -167,10 +164,10 @@ pod install
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/05/23/octopressfu-jia-gong-neng/" title="Previous Post: Octopress附加功能">&laquo; Octopress附加功能</a>
+        <a class="basic-alignment left" href="/blog/2015/09/11/ios-di-san-fang-lei-ku/" title="Previous Post: iOS 第三方类库">&laquo; iOS 第三方类库</a>
       
       
-        <a class="basic-alignment right" href="/blog/2015/09/11/xcode-cha-jian/" title="Next Post: Xcode 插件">Xcode 插件 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2015/09/11/iosbi-ji-(1):pushviewcontroller,-presentviewcontroller-jian-dan-qu-fen/" title="Next Post: iOS笔记（1）：pushViewController、presentViewController 简单区分">iOS笔记（1）：pushViewController、presentViewController 简单区分 &raquo;</a>
       
     </p>
   </footer>

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>使用CocoaPods做iOS程序包依赖管理 - 刘明个人博客</title>
+  <title>iOS 第三方类库 - 刘明个人博客</title>
   <meta name="author" content="刘明">
 
   
-  <meta name="description" content="由于ruby、CocoaPods被墙的关系，可能会造成一些乱七八糟的错误。最好有个稳定的VPN。 CocoaPods安装和使用 安装 mac下安装很简单。 sudo gem install cocoapods 注意，需要安装Command Line Tools。 使用 &hellip;">
+  <meta name="description" content="日历开源类库 tapkulibrary封装了很多类，日历只是其中一部分，和iOS自带UI一样。更新频繁。 Kal也是标准日历控件。更新不频繁。 calendar-ui日、周表现形式的日历控件。正常更新。 DDCalendarView简单日历控件。很久没更新了。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://qlqsh.github.io/blog/2015/09/11/shi-yong-cocoapodszuo-ioscheng-xu-bao-yi-lai-guan-li/">
+  <link rel="canonical" href="http://qlqsh.github.io/blog/2015/09/11/ios-di-san-fang-lei-ku/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="刘明个人博客" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">使用CocoaPods做iOS程序包依赖管理</h1>
+      <h1 class="entry-title">iOS 第三方类库</h1>
     
     
       <p class="meta">
@@ -77,66 +77,33 @@
 
 
 
-<time class='entry-date' datetime='2015-09-11T22:28:03+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:28 pm</span></time>
+<time class='entry-date' datetime='2015-09-11T23:41:19+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:41 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>由于ruby、CocoaPods被墙的关系，可能会造成一些乱七八糟的错误。最好有个稳定的VPN。</p>
+<div class="entry-content"><h2>日历开源类库</h2>
+
+<p><a href="https://github.com/devinross/tapkulibrary">tapkulibrary</a>封装了很多类，日历只是其中一部分，和iOS自带UI一样。更新频繁。</p>
+
+<p><a href="https://github.com/klazuka/Kal">Kal</a>也是标准日历控件。更新不频繁。</p>
 
 <!--more-->
 
 
-<h2>CocoaPods安装和使用</h2>
+<p><a href="https://github.com/muhku/calendar-ui">calendar-ui</a>日、周表现形式的日历控件。正常更新。</p>
 
-<h4>安装</h4>
+<p><a href="https://github.com/damiandawber/DDCalendarView">DDCalendarView</a>简单日历控件。很久没更新了。</p>
 
-<p>mac下安装很简单。</p>
+<p><a href="https://github.com/shaokun/SimpleCalendarView">SimpleCalendarView</a>简单日历控件，很久没更新了。</p>
 
-<pre><code>sudo gem install cocoapods
-</code></pre>
+<p><a href="https://github.com/voidparadox/Si-Calendar">Si-Calendar</a>标准日历控件，正常更新。</p>
 
-<blockquote><p>注意，需要安装Command Line Tools。</p></blockquote>
+<p><a href="http://code.google.com/p/iphonecal/">iphonecal</a>中文日历控件，很难看。</p>
 
-<h4>使用</h4>
-
-<p>使用时需要新建一个名为Podfile的文件，以如下格式，将依赖的库名字依次列在文件中即可</p>
-
-<pre><code>platform :ios
-pod 'JSONKit',       '~&gt; 1.4'
-pod 'Reachability',  '~&gt; 3.0.0'
-pod 'ASIHTTPRequest'
-pod 'RegexKitLite'
-</code></pre>
-
-<p>然后将编辑好的Podfile文件放到你的项目根目录中，执行如下命令即可：</p>
-
-<pre><code>cd "your project home"
-pod install
-</code></pre>
-
-<p>现在，你的所有第三方库都已经下载完成并且设置好了编译参数和依赖，你只需要记住如下2点即可：</p>
-
-<blockquote><ol>
-<li>使用CocoaPods生成的<code>.xcworkspace</code>文件来打开工程，而不是以前的<code>.xcodeproj</code>文件。</li>
-<li>每次更改了Podfile文件，你需要重新执行一次<code>pod install</code>命令。</li>
-</ol>
-</blockquote>
-
-<h4>查找第三方库</h4>
-
-<p>可以使用<code>pod search name</code>命令查找可用类库。比如：</p>
-
-<pre><code>pod search json
-</code></pre>
-
-<h2>参考文献：</h2>
-
-<p><a href="http://blog.devtang.com/blog/2012/12/02/use-cocoapod-to-manage-ios-lib-dependency/">http://blog.devtang.com/blog/2012/12/02/use-cocoapod-to-manage-ios-lib-dependency/</a></p>
-
-<p><a href="http://www.cnblogs.com/wayne23/p/3912882.html">http://www.cnblogs.com/wayne23/p/3912882.html</a></p>
+<p><a href="https://github.com/jaykz52/CKCalendar">CKCalendar</a>轻松定制日历控件，比较好看，更新不频繁。</p>
 </div>
 
 
@@ -152,7 +119,7 @@ pod install
 
 
 
-<time class='entry-date' datetime='2015-09-11T22:28:03+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:28 pm</span></time>
+<time class='entry-date' datetime='2015-09-11T23:41:19+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:41 pm</span></time>
       
 
 
@@ -167,10 +134,10 @@ pod install
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/05/23/octopressfu-jia-gong-neng/" title="Previous Post: Octopress附加功能">&laquo; Octopress附加功能</a>
+        <a class="basic-alignment left" href="/blog/2015/09/11/xcode-cha-jian/" title="Previous Post: Xcode 插件">&laquo; Xcode 插件</a>
       
       
-        <a class="basic-alignment right" href="/blog/2015/09/11/xcode-cha-jian/" title="Next Post: Xcode 插件">Xcode 插件 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2015/09/11/textmate2-jian-dan-bi-ji/" title="Next Post: TextMate2 简单笔记">TextMate2 简单笔记 &raquo;</a>
       
     </p>
   </footer>

@@ -9,8 +9,10 @@
   <meta name="author" content="刘明">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="Git配置 git config --global user.name "qlqsh"
+git config --global user.email "hopefor@gmail.com"
+git config --global color.ui true
+git config --global &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -72,6 +74,307 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2015/09/12/git-bei-wang/">Git 备忘</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-12T00:08:13+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:08 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Git配置</h2>
+
+<pre><code>git config --global user.name "qlqsh"
+git config --global user.email "hopefor@gmail.com"
+git config --global color.ui true
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.br branch
+git config --global core.editor "mate -w"    # 设置Editor使用textmate
+git config -l # 列举所有配置
+</code></pre>
+
+<p>用户的git配置文件<code>~/.gitconfig</code></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/09/12/git-bei-wang/">“继续 &rarr;"</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/09/11/hpple-shi-yong/">Hpple 使用</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-11T23:59:48+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:59 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="cp">#import &quot;TFHpple.h&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="bp">NSData</span>  <span class="o">*</span><span class="n">data</span>      <span class="o">=</span> <span class="p">[</span><span class="bp">NSData</span> <span class="nl">dataWithContentsOfFile</span><span class="p">:</span><span class="s">@&quot;index.html&quot;</span><span class="p">];</span>
+</span><span class='line'><span class="n">TFHpple</span> <span class="o">*</span><span class="n">doc</span>       <span class="o">=</span> <span class="p">[[</span><span class="n">TFHpple</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithHTMLData</span><span class="p">:</span><span class="n">data</span><span class="p">];</span>
+</span><span class='line'><span class="bp">NSArray</span> <span class="o">*</span><span class="n">elements</span>  <span class="o">=</span> <span class="p">[</span><span class="n">doc</span> <span class="nl">search</span><span class="p">:</span><span class="s">@&quot;//a[@class=&#39;sponsor&#39;]&quot;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">TFHppleElement</span> <span class="o">*</span><span class="n">element</span> <span class="o">=</span> <span class="p">[</span><span class="n">elements</span> <span class="nl">objectAtIndex</span><span class="p">:</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="n">raw</span><span class="p">];</span>                        <span class="c1">// 未处理内容</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="n">text</span><span class="p">];</span>                       <span class="c1">// The text inside the HTML element (the content of the first text node)</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="n">tagName</span><span class="p">];</span>                    <span class="c1">// &quot;a&quot;</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="n">attributes</span><span class="p">];</span>                 <span class="c1">// NSDictionary of href, class, id, etc.</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="nl">objectForKey</span><span class="p">:</span><span class="s">@&quot;href&quot;</span><span class="p">];</span>       <span class="c1">// Easy access to single attribute</span>
+</span><span class='line'><span class="p">[</span><span class="n">e</span> <span class="nl">firstChildWithTagName</span><span class="p">:</span><span class="s">@&quot;b&quot;</span><span class="p">];</span> <span class="c1">// The first &quot;b&quot; child node</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/09/11/hpple-shi-yong/">“继续 &rarr;"</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/09/11/iosbi-ji-(1):pushviewcontroller,-presentviewcontroller-jian-dan-qu-fen/">iOS笔记（1）：pushViewController、presentViewController 简单区分</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-11T23:51:51+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:51 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>pushViewController</h2>
+
+<p>一般在<code>UINavigationController</code>的时候用，</p>
+
+<pre><code>[self.navigationController pushViewController:viewController animated:YES];
+</code></pre>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/09/11/iosbi-ji-(1):pushviewcontroller,-presentviewcontroller-jian-dan-qu-fen/">“继续 &rarr;"</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/09/11/textmate2-jian-dan-bi-ji/">TextMate2 简单笔记</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-11T23:45:35+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:45 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Bundle目录</h2>
+
+<p>官方博客上说，TM2的Bundle目录是</p>
+
+<blockquote><p>~/Library/Application Support/Avian/Pristine Copy/Bundles/</p></blockquote>
+
+<p>令人困惑的是，以下目录也可用</p>
+
+<blockquote><p>~/Library/Application Support/Avian/Bundles/</p></blockquote>
+
+<p>TextMate默认带的那些Bundles都放在以下目录中：</p>
+
+<blockquote><p>~/Library/Application Support/TextMate/Managed/Bundles</p></blockquote>
+
+<p>额外的Bundle</p>
+
+<h2>全局设置文件</h2>
+
+<p>TM2可以自定一个全局设置，保存在<code>~/.tm_properties</code>文件中。</p>
+
+<p>可参考：<a href="https://gist.github.com/1478685">https://gist.github.com/1478685</a></p>
+
+<blockquote><p>奇怪，死活找不到.tm_properties文件，正式版出来再看看文档吧。</p></blockquote>
+
+<h2>TextMate2查找替换</h2>
+
+<p>基本不用调出对话框的。</p>
+
+<p><code>ctrl+s</code> 增量查找</p>
+
+<p><code>cmd+e</code> 将选中内容变成查找目标，<code>cmd+g</code>就到下一个了。常用的组合是<code>ctrl+w</code>（选中当前词） –> <code>cmd+e</code> –> <code>cmd+g</code></p>
+
+<p><code>cmd+opt+f</code> 同时编辑文件内所有匹配查找目标的内容</p>
+
+<p>另外全工程替换效果也很赞。可以进一步编辑工程下面的<code>.tm_properties</code>，设置工程内查找可以忽略哪些文件。例如忽略<code>vendor</code>目录，<code>.bundle</code>文件，<code>.sfd</code>文件和压缩的js可以这么写：</p>
+
+<pre><code>exclude = "{$exclude,vendor/**/*,*.bundle,*.sfd,*.sfd~,*.a,*.min.js}"
+</code></pre>
+
+<p>键盘操作限定搜索范围在一个文件夹内的方法：<code>cmd+opt+tab</code>把焦点切换到目录中选中文件夹 （焦点在目录时可以连续敲入文件的前几个字母快速跳到那个文件上，就和在<code>finder</code>中差不多），然后就可以<code>cmd+shift+f</code>了。</p>
+
+<h2>TextMate2建立新Bundles</h2>
+
+<p><code>Bundles</code> –> <code>Edit Bundles</code>，然后<code>cmd+N</code>。</p>
+
+<h2>参考文献：</h2>
+
+<p><a href="http://ruby-china.org/topics/5916">http://ruby-china.org/topics/5916</a></p>
+
+<p><a href="http://xiaolai.github.io/alpha/notes/TextMate2.html">http://xiaolai.github.io/alpha/notes/TextMate2.html</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/09/11/ios-di-san-fang-lei-ku/">iOS 第三方类库</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-11T23:41:19+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:41 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>日历开源类库</h2>
+
+<p><a href="https://github.com/devinross/tapkulibrary">tapkulibrary</a>封装了很多类，日历只是其中一部分，和iOS自带UI一样。更新频繁。</p>
+
+<p><a href="https://github.com/klazuka/Kal">Kal</a>也是标准日历控件。更新不频繁。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/09/11/ios-di-san-fang-lei-ku/">“继续 &rarr;"</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/09/11/xcode-cha-jian/">Xcode 插件</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-11T23:23:11+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:23 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h5>1、<a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a></h5>
+
+<p>工程依赖管理。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/09/11/xcode-cha-jian/">“继续 &rarr;"</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2015/09/11/shi-yong-cocoapodszuo-ioscheng-xu-bao-yi-lai-guan-li/">使用CocoaPods做iOS程序包依赖管理</a></h1>
     
     
@@ -88,9 +391,14 @@
   </header>
 
 
-  <div class="entry-content">
+  <div class="entry-content"><p>由于ruby、CocoaPods被墙的关系，可能会造成一些乱七八糟的错误。最好有个稳定的VPN。</p>
+
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/09/11/shi-yong-cocoapodszuo-ioscheng-xu-bao-yi-lai-guan-li/">“继续 &rarr;"</a>
+    </footer>
   
 
 
@@ -189,15 +497,23 @@ disqus_show_comment_count: true
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/09/11/shi-yong-cocoapodszuo-ioscheng-xu-bao-yi-lai-guan-li/">使用CocoaPods做iOS程序包依赖管理</a>
+        <a href="/blog/2015/09/12/git-bei-wang/">Git 备忘</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/05/23/octopressfu-jia-gong-neng/">Octopress附加功能</a>
+        <a href="/blog/2015/09/11/hpple-shi-yong/">Hpple 使用</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/05/22/shi-yong-octopressjian-li-bo-ke/">使用Octopress建立博客</a>
+        <a href="/blog/2015/09/11/iosbi-ji-(1):pushviewcontroller,-presentviewcontroller-jian-dan-qu-fen/">iOS笔记（1）：pushViewController、presentViewController 简单区分</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/11/textmate2-jian-dan-bi-ji/">TextMate2 简单笔记</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/11/ios-di-san-fang-lei-ku/">iOS 第三方类库</a>
       </li>
     
   </ul>
