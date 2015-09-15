@@ -4,7 +4,7 @@
   <title><![CDATA[刘明个人博客]]></title>
   <link href="http://qlqsh.github.io/atom.xml" rel="self"/>
   <link href="http://qlqsh.github.io/"/>
-  <updated>2015-09-12T00:15:53+08:00</updated>
+  <updated>2015-09-15T10:41:33+08:00</updated>
   <id>http://qlqsh.github.io/</id>
   <author>
     <name><![CDATA[刘明]]></name>
@@ -419,30 +419,62 @@ git push -u origin master
     <link href="http://qlqsh.github.io/blog/2015/09/11/xcode-cha-jian/"/>
     <updated>2015-09-11T23:23:11+08:00</updated>
     <id>http://qlqsh.github.io/blog/2015/09/11/xcode-cha-jian</id>
-    <content type="html"><![CDATA[<h5>1、<a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a></h5>
+    <content type="html"><![CDATA[<h2>主要插件</h2>
+
+<h5>1、<a href="">Alcatraz</a></h5>
+
+<p>Xcode 插件管理。</p>
+
+<h5>1、<a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a></h5>
 
 <p>工程依赖管理。</p>
 
 <!--more-->
 
 
-<h5>2、<a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocument-Xcode</a></h5>
-
-<p>规范化注释插件，输入<code>///</code>触发，然后就是填写剩余的信息了。</p>
-
-<h5>3、<a href="https://github.com/ksuther/KSImageNamed-Xcode">KSImageNamed-Xcode</a></h5>
-
-<p>使用<code>[UIImage/NSImage imageNamed:]</code>的时候弹出图片选择列表。</p>
-
-<h5>4、<a href="https://github.com/holtwick/HOStringSense-for-Xcode">HOStringSense-for-Xcode</a></h5>
-
-<p>可以把<code>NSLog</code>中的字符串，显示为正常输出样式。同时也可以用于实际的正则表达式显示。</p>
-
-<h5>5、<a href="https://github.com/benoitsan/BBUncrustifyPlugin-Xcode">BBUncrustifyPlugin-Xcode</a></h5>
+<h5>2、<a href="https://github.com/benoitsan/BBUncrustifyPlugin-Xcode">BBUncrustifyPlugin-Xcode</a></h5>
 
 <p>用于 Objective-C 代码格式化。</p>
 
-<h5>6、<a href="https://github.com/omz/ColorSense-for-Xcode">ColorSense-for-Xcode</a></h5>
+<h2>辅助插件</h2>
+
+<h5><a href="https://github.com/limejelly/Backlight-for-XCode">Backlight</a></h5>
+
+<p>高亮当前行。</p>
+
+<h5><a href="https://github.com/omz/Dash-Plugin-for-Xcode">OMQuickHelp</a></h5>
+
+<p>Dash 插件。</p>
+
+<h5><a href="https://github.com/markohlebar/Peckham">Peckham</a></h5>
+
+<p>快速添加头文件。</p>
+
+<h5><a href="https://github.com/Draveness/ATProperty">ATProperty</a></h5>
+
+<p>快速建立属性。</p>
+
+<h5><a href="https://github.com/ThilinaHewagama/AutoIndentWithSave">AutoIndentWithSave</a></h5>
+
+<p>记录的时候自动缩进。</p>
+
+<h5><a href="https://github.com/khoogheem/SwiftXcodeFileTemplates">Swift Templates</a></h5>
+
+<p>Swift 模版。</p>
+
+<h5><a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocument-Xcode</a></h5>
+
+<p>规范化注释插件，输入<code>///</code>触发，然后就是填写剩余的信息了。</p>
+
+<h5><a href="https://github.com/ksuther/KSImageNamed-Xcode">KSImageNamed-Xcode</a></h5>
+
+<p>使用<code>[UIImage/NSImage imageNamed:]</code>的时候弹出图片选择列表。</p>
+
+<h5><a href="https://github.com/holtwick/HOStringSense-for-Xcode">HOStringSense-for-Xcode</a></h5>
+
+<p>可以把<code>NSLog</code>中的字符串，显示为正常输出样式。同时也可以用于实际的正则表达式显示。</p>
+
+<h5><a href="https://github.com/omz/ColorSense-for-Xcode">ColorSense-for-Xcode</a></h5>
 
 <p>可视化颜色选择。</p>
 ]]></content>
