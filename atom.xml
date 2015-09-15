@@ -4,7 +4,7 @@
   <title><![CDATA[刘明个人博客]]></title>
   <link href="http://qlqsh.github.io/atom.xml" rel="self"/>
   <link href="http://qlqsh.github.io/"/>
-  <updated>2015-09-15T10:41:33+08:00</updated>
+  <updated>2015-09-15T10:46:11+08:00</updated>
   <id>http://qlqsh.github.io/</id>
   <author>
     <name><![CDATA[刘明]]></name>
@@ -425,14 +425,14 @@ git push -u origin master
 
 <p>Xcode 插件管理。</p>
 
-<h5>1、<a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a></h5>
+<h5>2、<a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a></h5>
 
 <p>工程依赖管理。</p>
 
 <!--more-->
 
 
-<h5>2、<a href="https://github.com/benoitsan/BBUncrustifyPlugin-Xcode">BBUncrustifyPlugin-Xcode</a></h5>
+<h5>3、<a href="https://github.com/benoitsan/BBUncrustifyPlugin-Xcode">BBUncrustifyPlugin-Xcode</a></h5>
 
 <p>用于 Objective-C 代码格式化。</p>
 
