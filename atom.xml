@@ -4,7 +4,7 @@
   <title><![CDATA[刘明个人博客]]></title>
   <link href="http://qlqsh.github.io/atom.xml" rel="self"/>
   <link href="http://qlqsh.github.io/"/>
-  <updated>2015-09-15T10:46:11+08:00</updated>
+  <updated>2015-09-17T10:38:53+08:00</updated>
   <id>http://qlqsh.github.io/</id>
   <author>
     <name><![CDATA[刘明]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[iOS 组件]]></title>
+    <link href="http://qlqsh.github.io/blog/2015/09/17/ios-zu-jian/"/>
+    <updated>2015-09-17T10:19:19+08:00</updated>
+    <id>http://qlqsh.github.io/blog/2015/09/17/ios-zu-jian</id>
+    <content type="html"><![CDATA[<h2>主要组件</h2>
+
+<ol>
+<li>UIView</li>
+</ol>
+
+
+<!--more-->
+
+
+<h2>次要组件</h2>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Git 备忘]]></title>
@@ -391,7 +410,19 @@ git push -u origin master
     <link href="http://qlqsh.github.io/blog/2015/09/11/ios-di-san-fang-lei-ku/"/>
     <updated>2015-09-11T23:41:19+08:00</updated>
     <id>http://qlqsh.github.io/blog/2015/09/11/ios-di-san-fang-lei-ku</id>
-    <content type="html"><![CDATA[<h2>日历开源类库</h2>
+    <content type="html"><![CDATA[<h2>主要类库</h2>
+
+<ol>
+<li><a href="https://github.com/AFNetworking/AFNetworking">AFNetwroking</a></li>
+</ol>
+
+
+<p>iOS 最重要、最好用的网络开发框架。</p>
+
+<!--more-->
+
+
+<h2>日历开源类库</h2>
 
 <p><a href="https://github.com/devinross/tapkulibrary">tapkulibrary</a>封装了很多类，日历只是其中一部分，和iOS自带UI一样。更新频繁。</p>
 
