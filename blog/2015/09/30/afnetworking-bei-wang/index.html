@@ -88,7 +88,8 @@
 
 <p>很多网页是<code>UTF-8</code>编码，但使用<code>AFNetworking</code>获取后，返回<code>null</code>。应该是中文的关系。所以获取的时候最好使用<code>NSISOLatin1StringEncoding</code>。然后获取完数据后再次转码回来。</p>
 
-<p>  [NSString stringWithCString:[需要转码的字符串 cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding]</p>
+<pre><code>[NSString stringWithCString:[需要转码的字符串 cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding]
+</code></pre>
 
 <p>参考文献 <a href="http://blog.csdn.net/leinchu/article/details/38540409">http://blog.csdn.net/leinchu/article/details/38540409</a></p>
 
@@ -97,10 +98,12 @@
 
 <h2>增加可接收的 Content-Type</h2>
 
-<p>支持 html，支持 plain 同理
-  [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@&ldquo;text/html&rdquo;]];
-  // 另一种方式
-  op.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@&ldquo;text/html&rdquo;];</p>
+<p>支持 html，支持 plain 同理</p>
+
+<pre><code>[AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
+// 另一种方式
+op.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+</code></pre>
 </div>
 
 
