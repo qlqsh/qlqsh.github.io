@@ -9,7 +9,7 @@
   <meta name="author" content="刘明">
 
   
-  <meta name="description" content="主要组件 UIView ">
+  <meta name="description" content="编码问题 很多网页是UTF-8编码，但使用AFNetworking获取后，返回null。应该是中文的关系。所以获取的时候最好使用NSISOLatin1StringEncoding。然后获取完数据后再次转码回来。 [NSString stringWithCString:[需要转码的字符串 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,46 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/09/30/afnetworking-bei-wang/">AFNetworking 备忘</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-30T12:51:45+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:51 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>编码问题</h2>
+
+<p>很多网页是<code>UTF-8</code>编码，但使用<code>AFNetworking</code>获取后，返回<code>null</code>。应该是中文的关系。所以获取的时候最好使用<code>NSISOLatin1StringEncoding</code>。然后获取完数据后再次转码回来。</p>
+
+<p>  [NSString stringWithCString:[需要转码的字符串 cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding]</p>
+
+<p>参考文献 <a href="http://blog.csdn.net/leinchu/article/details/38540409">http://blog.csdn.net/leinchu/article/details/38540409</a></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/09/30/afnetworking-bei-wang/">“继续 &rarr;"</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -493,43 +533,9 @@ disqus_show_comment_count: true
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/22/shi-yong-octopressjian-li-bo-ke/">使用Octopress建立博客</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-05-22T13:38:00+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>1:38 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>由于墙的关系，可能会造成一些乱七八糟的错误。最好有个稳定的VPN。</p>
-
-<p>这次安装是最简单，也是最舒心，中途没有碰到什么问题，非常顺。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/05/22/shi-yong-octopressjian-li-bo-ke/">“继续 &rarr;"</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -540,6 +546,10 @@ disqus_show_comment_count: true
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/09/30/afnetworking-bei-wang/">AFNetworking 备忘</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/09/17/ios-zu-jian/">iOS 组件</a>
@@ -575,10 +585,6 @@ disqus_show_comment_count: true
     
       <li class="post">
         <a href="/blog/2013/05/23/octopressfu-jia-gong-neng/">Octopress附加功能</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/22/shi-yong-octopressjian-li-bo-ke/">使用Octopress建立博客</a>
       </li>
     
   </ul>

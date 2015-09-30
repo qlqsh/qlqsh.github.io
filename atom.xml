@@ -4,7 +4,7 @@
   <title><![CDATA[刘明个人博客]]></title>
   <link href="http://qlqsh.github.io/atom.xml" rel="self"/>
   <link href="http://qlqsh.github.io/"/>
-  <updated>2015-09-17T10:38:53+08:00</updated>
+  <updated>2015-09-30T13:28:16+08:00</updated>
   <id>http://qlqsh.github.io/</id>
   <author>
     <name><![CDATA[刘明]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[AFNetworking 备忘]]></title>
+    <link href="http://qlqsh.github.io/blog/2015/09/30/afnetworking-bei-wang/"/>
+    <updated>2015-09-30T12:51:45+08:00</updated>
+    <id>http://qlqsh.github.io/blog/2015/09/30/afnetworking-bei-wang</id>
+    <content type="html"><![CDATA[<h2>编码问题</h2>
+
+<p>很多网页是<code>UTF-8</code>编码，但使用<code>AFNetworking</code>获取后，返回<code>null</code>。应该是中文的关系。所以获取的时候最好使用<code>NSISOLatin1StringEncoding</code>。然后获取完数据后再次转码回来。</p>
+
+<p>  [NSString stringWithCString:[需要转码的字符串 cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding]</p>
+
+<p>参考文献 <a href="http://blog.csdn.net/leinchu/article/details/38540409">http://blog.csdn.net/leinchu/article/details/38540409</a></p>
+
+<!--more-->
+
+
+<h2>增加可接收的 Content-Type</h2>
+
+<p>支持 html，支持 plain 同理
+  [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@&ldquo;text/html&rdquo;]];
+  // 另一种方式
+  op.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@&ldquo;text/html&rdquo;];</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[iOS 组件]]></title>
